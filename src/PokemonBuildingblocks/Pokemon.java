@@ -16,7 +16,7 @@ public abstract class Pokemon {
     }
 
     public void eats(){
-        System.out.println("I am eating: " + food);
+        System.out.println("\n" + name + " is eating: " + food);
     }
 
     public void speaks(){
@@ -50,7 +50,7 @@ public abstract class Pokemon {
 
     public void attack(Pokemon enemy, int damage, String nameAttack){
         speaks();
-        System.out.println("I do the attack: " + nameAttack);
+        System.out.println("\n"+ name + " does the attack on " + enemy.getName()+ ": " + nameAttack);
         enemy.setHp(enemy.getHp() - damage);
         System.out.println("The level of " + enemy.getName() + " is now: " + enemy.getHp());
     }

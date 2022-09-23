@@ -21,4 +21,4 @@ public abstract class FirePokemon extends Pokemon {
             attack(enemy,60,"Flamethrower" );
         }
     }
-}
+
