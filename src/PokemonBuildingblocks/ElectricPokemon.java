@@ -1,8 +1,14 @@
 package PokemonBuildingblocks;
 
+
 public abstract class ElectricPokemon extends Pokemon {
-    public ElectricPokemon(String name, int hp, String food, String sound) {
-        super(name, hp, food, sound);
+
+    private boolean chargeable;
+    private boolean hasOutlet;
+    public ElectricPokemon(String name, int hp, String food, String sound, String picture, boolean chargeable, boolean hasOutlet) {
+        super(name, hp, food, sound,picture);
+        this.chargeable = chargeable;
+        this.hasOutlet = hasOutlet;
     }
 
         public void thunderPunch(Pokemon enemy) {

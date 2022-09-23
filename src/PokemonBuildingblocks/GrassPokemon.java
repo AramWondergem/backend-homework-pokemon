@@ -1,8 +1,13 @@
 package PokemonBuildingblocks;
 
 public abstract class GrassPokemon extends Pokemon {
-    public GrassPokemon(String name, int hp, String food, String sound) {
-        super(name, hp, food, sound);
+
+    private boolean allergicForFertilizer;
+    private int numberOfWateringTimesWeek;
+    public GrassPokemon(String name, int hp, String food, String sound,String picture,boolean allergicForFertilizer, int numberOfWateringTimesWeek) {
+        super(name, hp, food, sound, picture);
+        this.allergicForFertilizer=allergicForFertilizer;
+        this.numberOfWateringTimesWeek=numberOfWateringTimesWeek;
     }
 
         public void leaveBlade(Pokemon enemy) {

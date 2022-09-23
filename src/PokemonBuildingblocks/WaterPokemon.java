@@ -1,8 +1,14 @@
 package PokemonBuildingblocks;
 
 public abstract class WaterPokemon extends Pokemon{
-    public WaterPokemon(String name, int hp, String food, String sound) {
-        super(name, hp, food, sound);
+
+    private boolean canFloat;
+    private boolean saltWaterResitant;
+
+    public WaterPokemon(String name, int hp, String food, String sound, String picture,boolean canFloat, boolean saltWaterResitant) {
+        super(name, hp, food, sound,picture);
+        this.canFloat=canFloat;
+        this.saltWaterResitant=saltWaterResitant;
     }
 
         public void surf(Pokemon enemy) {

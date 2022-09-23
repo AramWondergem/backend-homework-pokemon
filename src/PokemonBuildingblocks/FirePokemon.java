@@ -1,8 +1,13 @@
 package PokemonBuildingblocks;
 
 public abstract class FirePokemon extends Pokemon {
-    public FirePokemon(String name, int hp, String food, String sound) {
-        super(name, hp, food, sound);
+
+    private boolean rainProtected;
+    private boolean doesSmokeSmell;
+    public FirePokemon(String name, int hp, String food, String sound, String picture, Boolean rainProtected, Boolean doesSmokeSmell) {
+        super(name, hp, food, sound,picture);
+        this.rainProtected=rainProtected;
+        this.doesSmokeSmell=doesSmokeSmell;
     }
 
         public void inferno(Pokemon enemy) {
