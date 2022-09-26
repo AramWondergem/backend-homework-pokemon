@@ -1,7 +1,4 @@
-package Pokemons;
 
-import PokemonBuildingblocks.Pokemon;
-import PokemonBuildingblocks.WaterPokemon;
 
 public class Squirtle extends WaterPokemon {
 

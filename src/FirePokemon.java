@@ -1,5 +1,3 @@
-package PokemonBuildingblocks;
-
 public abstract class FirePokemon extends Pokemon {
 
     private boolean rainProtected;

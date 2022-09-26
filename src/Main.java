@@ -1,9 +1,3 @@
-import PokemonBuildingblocks.*;
-import Pokemons.Bulbasaur;
-import Pokemons.Charmander;
-import Pokemons.Pikachu;
-import Pokemons.Squirtle;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,20 +5,73 @@ public class Main {
     public static void main(String[] args) {
         printWelkomMessage();
 
+        Trainer trainer = new Trainer();
+
         ElectricPokemon pikachu1 = new Pikachu();
         GrassPokemon bulbasaur1 = new Bulbasaur();
         WaterPokemon squirtle1 = new Squirtle();
-        FirePokemon charmander = new Charmander();
+        FirePokemon charmander1 = new Charmander();
+
+        trainer.addPokemon(pikachu1);
+        trainer.addPokemon(bulbasaur1);
+        trainer.addPokemon(squirtle1);
+        trainer.addPokemon(charmander1);
+
+        trainer.printPokemonDeck();
+        pikachu1.printTrainer();
+        bulbasaur1.printTrainer();
+        squirtle1.printTrainer();
+        charmander1.printTrainer();
+
 
         pikachu1.thunderPunch(bulbasaur1);
         bulbasaur1.leaveBlade(squirtle1);
-        squirtle1.rainDance(charmander);
-        charmander.pyroBall(pikachu1);
+        squirtle1.rainDance(charmander1);
+        charmander1.pyroBall(pikachu1);
 
         pikachu1.thunder(bulbasaur1);
         bulbasaur1.leafStorm(squirtle1);
-        squirtle1.surf(charmander);
-        charmander.specialMove(pikachu1);
+        squirtle1.surf(charmander1);
+        charmander1.specialMove(pikachu1);
+
+        Trainer trainer2 = new Trainer();
+
+        trainer.removePokemon(pikachu1);
+
+        System.out.println("pikachu bij Aram verwijderd");
+
+        pikachu1.printTrainer();
+        trainer.printPokemonDeck();
+
+        System.out.println("pikachu toegevoegd bij Henk");
+        trainer2.addPokemon(pikachu1);
+        pikachu1.printTrainer();
+
+
+        System.out.println("bulbasaur toegevoegd bij Henk");
+        trainer2.addPokemon(bulbasaur1);
+        trainer2.printPokemonDeck();
+        trainer.printPokemonDeck();
+        bulbasaur1.printTrainer();
+
+        squirtle1.removeTrainer(squirtle1.getTrainer());
+        System.out.println("Aram verwijderd bij Squirtle");
+        squirtle1.printTrainer();
+        trainer.printPokemonDeck();
+
+        squirtle1.addTrainer(trainer2);
+        System.out.println("Henk toegevoegd aan squirtle");
+        squirtle1.printTrainer();
+        trainer2.printPokemonDeck();
+
+        charmander1.addTrainer(trainer2);
+        System.out.println("Henk toegevoegd aan charmander");
+        charmander1.printTrainer();
+        trainer.printPokemonDeck();
+        trainer2.printPokemonDeck();
+
+
+
 
         
     }
@@ -55,6 +102,15 @@ public class Main {
             System.out.println(line);
         }
 
+    }
+
+    static void waitingMain(int ms) {
+        try {
+            Thread.sleep(ms);
+        }
+        catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }

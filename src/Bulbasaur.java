@@ -1,7 +1,4 @@
-package Pokemons;
 
-import PokemonBuildingblocks.GrassPokemon;
-import PokemonBuildingblocks.Pokemon;
 
 public class Bulbasaur extends GrassPokemon {
 

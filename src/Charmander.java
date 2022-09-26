@@ -1,7 +1,4 @@
-package Pokemons;
 
-import PokemonBuildingblocks.FirePokemon;
-import PokemonBuildingblocks.Pokemon;
 
 public class Charmander extends FirePokemon {
 

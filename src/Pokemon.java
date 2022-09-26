@@ -1,15 +1,13 @@
-package PokemonBuildingblocks;
-
-
-
-
 public abstract class Pokemon {
     private String name;
     private int level;
     private int hp;
     private String food;
     private String sound;
-    String picture;
+    private String picture;
+    private Trainer trainer;
+
+
 
     public Pokemon(String name, int hp, String food, String sound,String picture) {
         this.name = name;
@@ -37,9 +35,9 @@ public abstract class Pokemon {
 
     public void attack(Pokemon enemy, int damage, String nameAttack){
         speaks();
-        waiting(1000);
+        Main.waitingMain(1000);
         System.out.println("\n\n\n"+ name + " does the attack on " + enemy.getName()+ ": " + nameAttack);
-        waiting(1000);
+        Main.waitingMain(1000);
         System.out.println("\n" +
                 "\n" +
                 "\n" +
@@ -55,7 +53,7 @@ public abstract class Pokemon {
                 "                                                                                             \n" +
                 "                                                                                             ");
         enemy.setHp(enemy.getHp() - damage);
-        waiting(1000);
+        Main.waitingMain(1000);
         System.out.println("The level of " + enemy.getName() + " is now: " + enemy.getHp());
     }
 
@@ -108,19 +106,40 @@ public abstract class Pokemon {
     }
 
     public void pokemonBirth () {
-        waiting(1000);
+        Main.waitingMain(1000);
         System.out.println("New " + getName() + " is build");
-        waiting(1000);
+        Main.waitingMain(1000);
         printPokemon();
     }
 
-    private void waiting(int ms) {
-        try {
-            Thread.sleep(ms);
-        }
-        catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+    public Trainer getTrainer(){
+        return trainer;
     }
+
+public void addTrainer (Trainer trainer) {
+        if (this.trainer!=trainer&&this.trainer!=null){
+        this.trainer.removePokemon(this);
+        }
+        if(!trainer.checkPokemon(this)){
+            trainer.addPokemon(this);
+        }
+        this.trainer=trainer;
+
+}
+
+public void removeTrainer (Trainer trainer) {
+        if (trainer.checkPokemon(this)) {
+            trainer.removePokemon(this);
+        }
+        this.trainer= null;
+}
+
+public void printTrainer () {
+    if (this.trainer != null) {
+        System.out.println("The trainer of " + name + " is " + this.trainer.getName());
+    } else {
+        System.out.println(name + " has no trainer.");
+    }
+}
 
 }

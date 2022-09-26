@@ -1,5 +1,3 @@
-package PokemonBuildingblocks;
-
 public abstract class GrassPokemon extends Pokemon {
 
     private boolean allergicForFertilizer;

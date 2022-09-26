@@ -6,11 +6,11 @@ In deze opdracht gaan we deze punten toepassen op het onderwerp `Pokemons`
 
 ## Java
 
-Je gaat een applicatie maken die meerdere nieuwe `Pokemons` kan aanmaken. Voor degene die bekend zijn met `PokemonBuildingblocks.Pokemon` weten dat deze altijd een type hebben (eigenlijk zijn er meerdere types mogelijk, maar om het niet te moeilijk te maken, maken we gebruik van 1 type per pokemon)
+Je gaat een applicatie maken die meerdere nieuwe `Pokemons` kan aanmaken. Voor degene die bekend zijn met `Pokemon` weten dat deze altijd een type hebben (eigenlijk zijn er meerdere types mogelijk, maar om het niet te moeilijk te maken, maken we gebruik van 1 type per pokemon)
 
 Ondanks dat deze natuurlijk een type hebben zijn het `Pokemons`, en hebben deze ook bepaalde dingen gemeen met elkaar. Daarom gaan we ook gebruik maken van een `Super klasse`
 
-![PokemonBuildingblocks.Pokemon!](./assets/pokemon.JPG)
+![Pokemon!](./assets/pokemon.JPG)
 
 ## Opdracht voorwaarden
 
@@ -19,7 +19,7 @@ In de uitgewerkte opdracht moeten minimaal zitten:
 - 1 `super klasse` welke minimaal 2 `private variabeles`, `constructors`, 2 `methodes` en `getters & setters`
 - 4 `sub klassen` welke minimaal 2 `private variabeles`, `constructors`, 2 `methodes`, 1 `Override methode` en `getters & setters`
 - 1 `main klasse` met 1 `main methode`
-- In de `main methode` worden 4 verschillende `Pokemons` geïnstantieerd en gedeclareerd en wordt voor iedere `PokemonBuildingblocks.Pokemon` methodes aangeroepen
+- In de `main methode` worden 4 verschillende `Pokemons` geïnstantieerd en gedeclareerd en wordt voor iedere `Pokemon` methodes aangeroepen
 
 `Deze methodes mogen void returnen en een system.out.println uitvoeren`
 
@@ -30,15 +30,15 @@ In de uitgewerkte opdracht moeten minimaal zitten:
 
 2. Maak binnen de `Main klasse` een main methode aan (om je applicatie te kunnen draaien)
 
-3. Maak een `PokemonBuildingblocks.Pokemon klasse` aan
+3. Maak een `Pokemon klasse` aan
 
 4. Laat deze klassen voldoen aan de voorwaarden van de `super klasse` zoals hierboven vermeld is
 
 5. Maak de volgende klassen aan en laat deze voldoen aan de `sub klassen` zoals hierboven vermeld is: 
-- `PokemonBuildingblocks.FirePokemon`
-- `PokemonBuildingblocks.WaterPokemon`
-- `PokemonBuildingblocks.GrassPokemon`
-- `PokemonBuildingblocks.ElectricPokemon`
+- `FirePokemon`
+- `WaterPokemon`
+- `GrassPokemon`
+- `ElectricPokemon`
 
 5. Instantieer in de `main methode` 4 verschillende `Pokemons` met de verschillende `attributen`
 
@@ -79,7 +79,7 @@ In de uitgewerkte opdracht moeten minimaal zitten:
 
 Zijn er in deze opdracht mogelijkheden voor een `abstracte klasse`? 
 Zijn er in deze opdracht mogelijkheden voor `abstracte methodes`?
-Is het mogelijk om een `PokemonBuildingblocks.Pokemon` 2 types mee te geven?
+Is het mogelijk om een `Pokemon` 2 types mee te geven?
 
 
 

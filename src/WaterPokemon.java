@@ -1,6 +1,4 @@
-package PokemonBuildingblocks;
-
-public abstract class WaterPokemon extends Pokemon{
+public abstract class WaterPokemon extends Pokemon {
 
     private boolean canFloat;
     private boolean saltWaterResitant;

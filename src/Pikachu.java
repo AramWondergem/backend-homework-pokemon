@@ -1,10 +1,4 @@
-package Pokemons;
 
-import PokemonBuildingblocks.ElectricPokemon;
-import PokemonBuildingblocks.Pokemon;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class Pikachu extends ElectricPokemon {
 
