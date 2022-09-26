@@ -17,52 +17,59 @@ public class Main {
         trainer.addPokemon(squirtle1);
         trainer.addPokemon(charmander1);
 
+        //Below is a check to see if the bi-directional relation between Trainer and Pokemon works
         trainer.printPokemonDeck();
         pikachu1.printTrainer();
         bulbasaur1.printTrainer();
         squirtle1.printTrainer();
         charmander1.printTrainer();
 
-
-        pikachu1.thunderPunch(bulbasaur1);
-        bulbasaur1.leaveBlade(squirtle1);
-        squirtle1.rainDance(charmander1);
-        charmander1.pyroBall(pikachu1);
-
-        pikachu1.thunder(bulbasaur1);
-        bulbasaur1.leafStorm(squirtle1);
-        squirtle1.surf(charmander1);
-        charmander1.specialMove(pikachu1);
+        //Pokemons attack each other
+//        pikachu1.thunderPunch(bulbasaur1);
+//        bulbasaur1.leaveBlade(squirtle1);
+//        squirtle1.rainDance(charmander1);
+//        charmander1.pyroBall(pikachu1);
+//
+//        pikachu1.thunder(bulbasaur1);
+//        bulbasaur1.leafStorm(squirtle1);
+//        squirtle1.surf(charmander1);
+//        charmander1.specialMove(pikachu1);
 
         Trainer trainer2 = new Trainer();
-
+//Below is a check to see if the bi-directional relation between Trainer and Pokemon works. If the remove and add methods work
         trainer.removePokemon(pikachu1);
-
         System.out.println("pikachu bij Aram verwijderd");
-
         pikachu1.printTrainer();
         trainer.printPokemonDeck();
+        System.out.println("");
 
-        System.out.println("pikachu toegevoegd bij Henk");
+
         trainer2.addPokemon(pikachu1);
+        System.out.println("pikachu toegevoegd bij Henk");
         pikachu1.printTrainer();
+        trainer2.printPokemonDeck();
+        System.out.println("");
 
 
-        System.out.println("bulbasaur toegevoegd bij Henk");
         trainer2.addPokemon(bulbasaur1);
+        System.out.println("bulbasaur toegevoegd bij Henk");
         trainer2.printPokemonDeck();
         trainer.printPokemonDeck();
         bulbasaur1.printTrainer();
+        System.out.println("");
 
         squirtle1.removeTrainer(squirtle1.getTrainer());
         System.out.println("Aram verwijderd bij Squirtle");
         squirtle1.printTrainer();
         trainer.printPokemonDeck();
+        System.out.println("");
 
         squirtle1.addTrainer(trainer2);
         System.out.println("Henk toegevoegd aan squirtle");
         squirtle1.printTrainer();
         trainer2.printPokemonDeck();
+        trainer.printPokemonDeck();
+        System.out.println("");
 
         charmander1.addTrainer(trainer2);
         System.out.println("Henk toegevoegd aan charmander");
