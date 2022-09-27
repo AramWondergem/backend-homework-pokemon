@@ -1,7 +1,11 @@
+
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
+
+
     public static void main(String[] args) {
         printWelkomMessage();
 
@@ -59,7 +63,7 @@ public class Main {
         System.out.println("");
 
         squirtle1.removeTrainer(squirtle1.getTrainer());
-        System.out.println("Aram verwijderd bij Squirtle");
+        System.out.println("Aram verwijderd bij toBeDeleted.Squirtle");
         squirtle1.printTrainer();
         trainer.printPokemonDeck();
         System.out.println("");

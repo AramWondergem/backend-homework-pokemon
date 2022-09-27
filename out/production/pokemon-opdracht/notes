@@ -1,3 +1,13 @@
 next steps
 - make evolements of pokemons
-- add trainer class
+- delete pokemon to set to null
+
+evolution
+- stronger attacks
+- variables are higher
+- different name
+
+
+- remove picachu class and integrate in electric pokemon
+- created pokemon creation method
+- integrate all attacks --Make them addaptable be user

@@ -1,11 +1,59 @@
-public abstract class ElectricPokemon extends Pokemon {
+public class ElectricPokemon extends Pokemon {
 
-    private boolean chargeable;
-    private boolean hasOutlet;
-    public ElectricPokemon(String name, int hp, String food, String sound, String picture, boolean chargeable, boolean hasOutlet) {
-        super(name, hp, food, sound,picture);
-        this.chargeable = chargeable;
-        this.hasOutlet = hasOutlet;
+
+    private int type;
+    public ElectricPokemon(int type) {
+        super();
+        this.type=type;
+        createPokemon();
+//
+    }
+
+    public void createPokemon (){
+        switch(type) {
+            case 1:
+                super.pokemonBirth("Pikachu", 60, "Hamster dryfood", "Pikachuuuuuuuuuuuuuuu", "quu..__\n" +
+                        " $$$b  `---.__\n" +
+                        "  \"$$b        `--.                          ___.---uuudP\n" +
+                        "   `$$b           `.__.------.__     __.---'      $$$$\"              .\n" +
+                        "     \"$b          -'            `-.-'            $$$\"              .'|\n" +
+                        "       \".                                       d$\"             _.'  |\n" +
+                        "         `.   /                              ...\"             .'     |\n" +
+                        "           `./                           ..::-'            _.'       |\n" +
+                        "            /                         .:::-'            .-'         .'\n" +
+                        "           :                          ::''\\          _.'            |\n" +
+                        "          .' .-.             .-.           `.      .'               |\n" +
+                        "          : /'$$|           .@\"$\\           `.   .'              _.-'\n" +
+                        "         .'|$u$$|          |$$,$$|           |  <            _.-'\n" +
+                        "         | `:$$:'          :$$$$$:           `.  `.       .-'\n" +
+                        "         :                  `\"--'             |    `-.     \\\n" +
+                        "        :##.       ==             .###.       `.      `.    `\\\n" +
+                        "        |##:                      :###:        |        >     >\n" +
+                        "        |#'     `..'`..'          `###'        x:      /     /\n" +
+                        "         \\                                   xXX|     /    ./\n" +
+                        "          \\                                xXXX'|    /   ./\n" +
+                        "          /`-.                                  `.  /   /\n" +
+                        "         :    `-  ...........,                   | /  .'\n" +
+                        "         |         ``:::::::'       .            |<    `.\n" +
+                        "         |             ```          |           x| \\ `.:``.\n" +
+                        "         |                         .'    /'   xXX|  `:`M`M':.\n" +
+                        "         |    |                    ;    /:' xXXX'|  -'MMMMM:'\n" +
+                        "         `.  .'                   :    /:'       |-'MMMM.-'\n" +
+                        "          |  |                   .'   /'        .'MMM.-'\n" +
+                        "          `'`'                   :  ,'          |MMM<\n" +
+                        "            |                     `'            |tbap\\\n" +
+                        "             \\                                  :MM.-'\n" +
+                        "              \\                 |              .''\n" +
+                        "               \\.               `.            /\n" +
+                        "                /     .:::::::.. :           /\n" +
+                        "               |     .:::::::::::`.         /\n" +
+                        "               |   .:::------------\\       /\n" +
+                        "              /   .''               >::'  /\n" +
+                        "              `',:                 :    .'\n" +
+                        "                                   `:.:' Tim Park");
+
+        }
+
     }
 
         public void thunderPunch(Pokemon enemy) {

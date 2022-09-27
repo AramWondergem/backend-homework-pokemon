@@ -1,0 +1,8 @@
+Thunder Punch
+30
+Electroball
+40
+Volt Attack
+50
+ThunderStorm
+60

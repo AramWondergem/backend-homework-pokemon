@@ -1,14 +1,52 @@
-public abstract class WaterPokemon extends Pokemon {
+public class WaterPokemon extends Pokemon {
 
-    private boolean canFloat;
-    private boolean saltWaterResitant;
-
-    public WaterPokemon(String name, int hp, String food, String sound, String picture,boolean canFloat, boolean saltWaterResitant) {
-        super(name, hp, food, sound,picture);
-        this.canFloat=canFloat;
-        this.saltWaterResitant=saltWaterResitant;
+    private int type;
+    public WaterPokemon(int type) {
+        super();
+        this.type=type;
+        createPokemon();
     }
 
+    public void createPokemon (){
+        switch(type) {
+            case 1:
+                super.pokemonBirth("toBeDeleted.Squirtle", 60, "seaweed", "Hibriaaaaa","               _,........__\n" +
+                        "            ,-'            \"`-.\n" +
+                        "          ,'                   `-.\n" +
+                        "        ,'                        \\\n" +
+                        "      ,'                           .\n" +
+                        "      .'\\               ,\"\".       `\n" +
+                        "     ._.'|             / |  `       \\\n" +
+                        "     |   |            `-.'  ||       `.\n" +
+                        "     |   |            '-._,'||       | \\\n" +
+                        "     .`.,'             `..,'.'       , |`-.\n" +
+                        "     l                       .'`.  _/  |   `.\n" +
+                        "     `-.._'-   ,          _ _'   -\" \\  .     `\n" +
+                        "`.\"\"\"\"\"'-.`-...,---------','         `. `....__.\n" +
+                        ".'        `\"-..___      __,'\\          \\  \\     \\\n" +
+                        "\\_ .          |   `\"\"\"\"'    `.           . \\     \\\n" +
+                        "  `.          |              `.          |  .     L\n" +
+                        "    `.        |`--...________.'.        j   |     |\n" +
+                        "      `._    .'      |          `.     .|   ,     |\n" +
+                        "         `--,\\       .            `7\"\"' |  ,      |\n" +
+                        "            ` `      `            /     |  |      |    _,-'\"\"\"`-.\n" +
+                        "             \\ `.     .          /      |  '      |  ,'          `.\n" +
+                        "              \\  v.__  .        '       .   \\    /| /              \\\n" +
+                        "               \\/    `\"\"\\\"\"\"\"\"\"\"`.       \\   \\  /.''                |\n" +
+                        "                `        .        `._ ___,j.  `/ .-       ,---.     |\n" +
+                        "                ,`-.      \\         .\"     `.  |/        j     `    |\n" +
+                        "               /    `.     \\       /         \\ /         |     /    j\n" +
+                        "              |       `-.   7-.._ .          |\"          '         /\n" +
+                        "              |          `./_    `|          |            .     _,'\n" +
+                        "              `.           / `----|          |-............`---'\n" +
+                        "                \\          \\      |          |\n" +
+                        "               ,'           )     `.         |\n" +
+                        "                7____,,..--'      /          |\n" +
+                        "                                  `---.__,--.'mh");
+
+        }
+
+    }
         public void surf(Pokemon enemy) {
             attack(enemy,30,"surf");
         }
