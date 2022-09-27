@@ -24,16 +24,16 @@ public class Main {
         squirtle1.printTrainer();
         charmander1.printTrainer();
 
-        //Pokemons attack each other
-//        pikachu1.thunderPunch(bulbasaur1);
-//        bulbasaur1.leaveBlade(squirtle1);
-//        squirtle1.rainDance(charmander1);
-//        charmander1.pyroBall(pikachu1);
-//
-//        pikachu1.thunder(bulbasaur1);
-//        bulbasaur1.leafStorm(squirtle1);
-//        squirtle1.surf(charmander1);
-//        charmander1.specialMove(pikachu1);
+        Pokemons attack each other
+        pikachu1.thunderPunch(bulbasaur1);
+        bulbasaur1.leaveBlade(squirtle1);
+        squirtle1.rainDance(charmander1);
+        charmander1.pyroBall(pikachu1);
+
+        pikachu1.thunder(bulbasaur1);
+        bulbasaur1.leafStorm(squirtle1);
+        squirtle1.surf(charmander1);
+        charmander1.specialMove(pikachu1);
 
         Trainer trainer2 = new Trainer();
 //Below is a check to see if the bi-directional relation between Trainer and Pokemon works. If the remove and add methods work
