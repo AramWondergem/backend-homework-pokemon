@@ -11,3 +11,5 @@ evolution
 - remove picachu class and integrate in electric pokemon
 - created pokemon creation method
 - integrate all attacks --Make them addaptable be user
+
+next step: vullen bestanden met attacks

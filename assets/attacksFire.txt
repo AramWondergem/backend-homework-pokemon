@@ -1,0 +1,8 @@
+Inferno
+30
+Pyroball
+40
+Firelash
+50
+FlameThrower
+60

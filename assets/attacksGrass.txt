@@ -1,0 +1,8 @@
+LeaveBlade
+30
+Leech seed
+40
+Leaf Storm
+50
+tree Canon
+60

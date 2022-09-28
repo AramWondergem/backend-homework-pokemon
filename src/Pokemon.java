@@ -14,25 +14,23 @@ public abstract class Pokemon {
     private String picture;
     private Trainer trainer;
 
-    private static Map<String, Map<String, String>> generalAttacks = new HashMap<>();
+    private static Map<String, Map<String, Integer>> generalAttacks = new HashMap<>();
     private static Map<String, Integer> atacksElectric = new HashMap<>();
     private static Map<String, Integer> atacksGrass = new HashMap<>();
     private static Map<String, Integer> atacksFire = new HashMap<>();
     private static Map<String, Integer> atacksWater = new HashMap<>();
 
     static {
-        try {
-            File scoreFile = new File("assets/attacksElectric.txt");
-            Scanner fileScanner = new Scanner(scoreFile);
-            while (fileScanner.hasNext()) {
+        loadAttacks("assets/attacksElectric.txt",atacksElectric);
+        loadAttacks("assets/attacksWater.txt",atacksWater);
+        loadAttacks("assets/attacksGrass.txt",atacksGrass);
+        loadAttacks("assets/attacksFire.txt",atacksFire);
 
-                atacksElectric.put(fileScanner.nextLine(), Integer.valueOf(fileScanner.nextLine()));
+        generalAttacks.put("Electric",atacksElectric);
+        generalAttacks.put("Fire",atacksFire);
+        generalAttacks.put("Water",atacksWater);
+        generalAttacks.put("Grass",atacksGrass);
 
-            }
-
-        } catch (FileNotFoundException e) {
-            System.out.println("Het document bestaat niet");
-        }
         Iterator<Map.Entry<String, Integer>> iterator = atacksElectric.entrySet().iterator();
 
         while (iterator.hasNext()) {
@@ -43,8 +41,8 @@ public abstract class Pokemon {
     }
 
 
-    public Pokemon() {
-        pokemonBirth();
+    public Pokemon(String type) {
+        pokemonBirth(type);
     }
 
     public void eats() {
@@ -163,15 +161,45 @@ public abstract class Pokemon {
         }
     }
 
-    public void pokemonBirth(String name, int hp, String food, String sound, String picture) {
-        this.name = name;
-        this.hp = hp;
-        this.food = food;
-        this.sound = sound;
-        this.picture = picture;
+    public void pokemonBirth(String type) {
+        try {
+            File pokemonsFile = new File("assets/pokemons.txt");
+            Scanner fileScanner = new Scanner(pokemonsFile);
+            fileScanner.useDelimiter(";");
+            while (fileScanner.hasNext()) {
+
+                if (fileScanner.equals(type)) {
+                    this.name=fileScanner.next();
+                    this.hp=Integer.parseInt(fileScanner.next());
+                    this.food=fileScanner.next();
+                    this.picture=fileScanner.next();
+                }
+
+            }
+
+        } catch (FileNotFoundException e) {
+            System.out.println("Het document bestaat niet");
+        }
         Main.waitingMain(1000);
         System.out.println("New " + getName() + " is build");
         Main.waitingMain(1000);
         printPokemon();
+
+    }
+
+    private static void loadAttacks(String pathname,Map attacksmap){
+        try {
+            File attacksFile = new File(pathname);
+            Scanner fileScanner = new Scanner(attacksFile);
+            while (fileScanner.hasNext()) {
+
+                attacksmap.put(fileScanner.nextLine(), Integer.valueOf(fileScanner.nextLine()));
+
+            }
+
+        } catch (FileNotFoundException e) {
+            System.out.println("Het document bestaat niet");
+        }
+
     }
 }
