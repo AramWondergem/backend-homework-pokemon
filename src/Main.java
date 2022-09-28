@@ -115,7 +115,7 @@ public class Main {
 
     }
 
-    static void waitingMain(int ms) {
+    public static void waitingMain(int ms) {
         try {
             Thread.sleep(ms);
         }
