@@ -1,9 +1,15 @@
+import java.util.HashMap;
+import java.util.Map;
+
 public class GrassPokemon extends Pokemon {
 
-        private int type;
-        public GrassPokemon(int type) {
-            super();
-            this.type=type;
+    protected static Map<Integer,String> grassPokemon = new HashMap<>();
+
+    static {
+        grassPokemon.put(1,"Bulbasaur");
+    }
+        public GrassPokemon() {
+            super("type");
         }
 
 

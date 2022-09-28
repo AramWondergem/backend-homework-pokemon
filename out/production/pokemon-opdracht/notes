@@ -12,4 +12,11 @@ evolution
 - created pokemon creation method
 - integrate all attacks --Make them addaptable be user
 
-next step: vullen bestanden met attacks
+next step: aanmaken pokemon vanuit bestand. In class public static arraylist met namen en nummers. en die dan doorgeven aan super.
+- vragen of trainer acties wil uitvoeren: lijst van acties uitprinten.
+
+
+- welke pokemon wil je kiezen
+-uiprinten welke pokomenons er zijn
+- het type door een switch sturen
+- per switch dan het object aanmaken --> hoe kan je dan de naam van object maken

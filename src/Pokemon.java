@@ -1,9 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public abstract class Pokemon {
     private String name;
@@ -19,6 +16,7 @@ public abstract class Pokemon {
     private static Map<String, Integer> atacksGrass = new HashMap<>();
     private static Map<String, Integer> atacksFire = new HashMap<>();
     private static Map<String, Integer> atacksWater = new HashMap<>();
+    protected static Map<String, Map<Integer, String>> collectionsOfPokemons= new HashMap<>();
 
     static {
         loadAttacks("assets/attacksElectric.txt",atacksElectric);
@@ -38,6 +36,11 @@ public abstract class Pokemon {
             System.out.println(result.getKey() + " " + result.getValue());
 
         }
+
+        collectionsOfPokemons.put("1. Fire Pokemons",FirePokemon.firePokemon);
+        collectionsOfPokemons.put("2. Electric Pokemons",ElectricPokemon.electricPokemon);
+        collectionsOfPokemons.put("3. Grass Pokemons",GrassPokemon.grassPokemon);
+        collectionsOfPokemons.put("4. Water Pokemons",WaterPokemon.waterPokemon);
     }
 
 
@@ -201,5 +204,23 @@ public abstract class Pokemon {
             System.out.println("Het document bestaat niet");
         }
 
+    }
+
+    public static void printListOfPokemons(){
+
+        TreeMap<String,Map<Integer,String>> treeMap = new TreeMap<>(collectionsOfPokemons);
+        Iterator iterator = treeMap.keySet().iterator();
+
+
+        while (iterator.hasNext()) {
+            String keys= (String)iterator.next();
+            System.out.println(keys);
+
+            Map<Integer,String> placeholderHashmap = collectionsOfPokemons.get(keys);
+
+            placeholderHashmap.forEach((key, value) -> System.out.println(key + " : " + value));
+
+
+        }
     }
 }

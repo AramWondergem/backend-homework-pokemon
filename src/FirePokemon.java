@@ -1,10 +1,16 @@
+import java.util.HashMap;
+import java.util.Map;
+
 public class FirePokemon extends Pokemon {
 
-    private int type;
+    protected static Map<Integer,String> firePokemon = new HashMap<>();
 
-    public FirePokemon(int type) {
-        super();
-        this.type = type;
+    static {
+        firePokemon.put(1,"Charmander");
+    }
+
+    public FirePokemon() {
+        super("type");
     }
 
 }

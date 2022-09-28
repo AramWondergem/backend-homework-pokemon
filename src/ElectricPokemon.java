@@ -1,10 +1,16 @@
+import java.util.HashMap;
+import java.util.Map;
+
 public class ElectricPokemon extends Pokemon {
 
 
-    private int type;
-    public ElectricPokemon(int type) {
-        super();
-        this.type=type;
+    protected static Map<Integer,String> electricPokemon = new HashMap<>();
+
+    static {
+        electricPokemon.put(1,"Pikachu");
+    }    public ElectricPokemon() {
+        super("type");
+
     }
 
 

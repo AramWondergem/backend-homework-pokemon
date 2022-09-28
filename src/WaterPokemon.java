@@ -1,9 +1,15 @@
+import java.util.HashMap;
+import java.util.Map;
+
 public class WaterPokemon extends Pokemon {
 
-    private int type;
-    public WaterPokemon(int type) {
-        super();
-        this.type=type;
+    protected static Map<Integer,String> waterPokemon = new HashMap<>();
+
+    static {
+        waterPokemon.put(1,"Squirtle");
+    }
+    public WaterPokemon() {
+        super("type");
     }
 
 }
