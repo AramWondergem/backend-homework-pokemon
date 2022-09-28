@@ -7,36 +7,34 @@ public abstract class Pokemon {
     private String picture;
     private Trainer trainer;
 
+    public abstract void specialMove(Pokemon enemy);
 
-
-    public Pokemon(String name, int hp, String food, String sound,String picture) {
+    public Pokemon(String name, int hp, String food, String sound, String picture) {
         this.name = name;
         this.level = 1;
         this.hp = hp;
         this.food = food;
         this.sound = sound;
-        this.picture=picture;
+        this.picture = picture;
         pokemonBirth();
 
     }
 
-    public void eats(){
+    public void eats() {
         System.out.println("\n" + name + " is eating: " + food);
     }
 
-    public void speaks(){
+    public void speaks() {
         System.out.println("");
-        for (int i=0;i<3;i++) {
+        for (int i = 0; i < 3; i++) {
             System.out.print(sound);
         }
     }
 
-    public abstract void specialMove(Pokemon enemy);
-
-    public void attack(Pokemon enemy, int damage, String nameAttack){
+    public void attack(Pokemon enemy, int damage, String nameAttack) {
         speaks();
         Main.waitingMain(1000);
-        System.out.println("\n\n\n"+ name + " does the attack on " + enemy.getName()+ ": " + nameAttack);
+        System.out.println("\n\n\n" + name + " does the attack on " + enemy.getName() + ": " + nameAttack);
         Main.waitingMain(1000);
         System.out.println("\n" +
                 "\n" +
@@ -57,6 +55,45 @@ public abstract class Pokemon {
         System.out.println("The level of " + enemy.getName() + " is now: " + enemy.getHp());
     }
 
+    public void printPokemon() {
+        System.out.println(picture);
+    }
+    public void pokemonBirth() {
+        Main.waitingMain(1000);
+        System.out.println("New " + getName() + " is build");
+        Main.waitingMain(1000);
+        printPokemon();
+    }
+
+   //Add en remove of trainer associated with pokemon
+
+    public void addTrainer(Trainer trainer) {
+        if (this.trainer != trainer && this.trainer != null) {
+            this.trainer.removePokemon(this);
+        }
+        if (!trainer.checkPokemon(this)) {
+            trainer.addPokemon(this);
+        }
+        this.trainer = trainer;
+
+    }
+
+    public void removeTrainer(Trainer trainer) {
+        if (trainer.checkPokemon(this)) {
+            trainer.removePokemon(this);
+        }
+        this.trainer = null;
+    }
+
+    public void printTrainer() {
+        if (this.trainer != null) {
+            System.out.println("The trainer of " + name + " is " + this.trainer.getName());
+        } else {
+            System.out.println(name + " has no trainer.");
+        }
+    }
+
+    //Getters en Setters
     public String getName() {
         return name;
     }
@@ -70,9 +107,9 @@ public abstract class Pokemon {
     }
 
     public void levelUp(int level) {
-        if (level<3){
-        this.level++;}
-        else {
+        if (level < 3) {
+            this.level++;
+        } else {
             System.out.println("Your pokemon is already level 3");
         }
     }
@@ -101,45 +138,8 @@ public abstract class Pokemon {
         this.sound = sound;
     }
 
-    public void printPokemon (){
-        System.out.println(picture);
-    }
-
-    public void pokemonBirth () {
-        Main.waitingMain(1000);
-        System.out.println("New " + getName() + " is build");
-        Main.waitingMain(1000);
-        printPokemon();
-    }
-
-    public Trainer getTrainer(){
+    public Trainer getTrainer() {
         return trainer;
     }
-
-public void addTrainer (Trainer trainer) {
-        if (this.trainer!=trainer&&this.trainer!=null){
-        this.trainer.removePokemon(this);
-        }
-        if(!trainer.checkPokemon(this)){
-            trainer.addPokemon(this);
-        }
-        this.trainer=trainer;
-
-}
-
-public void removeTrainer (Trainer trainer) {
-        if (trainer.checkPokemon(this)) {
-            trainer.removePokemon(this);
-        }
-        this.trainer= null;
-}
-
-public void printTrainer () {
-    if (this.trainer != null) {
-        System.out.println("The trainer of " + name + " is " + this.trainer.getName());
-    } else {
-        System.out.println(name + " has no trainer.");
-    }
-}
 
 }
