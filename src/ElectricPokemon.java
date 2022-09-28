@@ -1,41 +1,26 @@
-public class ElectricPokemon extends Pokemon{
-    private String lightningColor;
-    private String sound;
+public abstract class ElectricPokemon extends Pokemon {
 
-    public ElectricPokemon(String name, int level, int hp, String lightningColor, String sound) {
-        super(name, level, hp);
-        super.setType("Electric");
-
-        this.lightningColor = lightningColor;
-        this.sound = sound;
+    private boolean chargeable;
+    private boolean hasOutlet;
+    public ElectricPokemon(String name, int hp, String food, String sound, String picture, boolean chargeable, boolean hasOutlet) {
+        super(name, hp, food, sound,picture);
+        this.chargeable = chargeable;
+        this.hasOutlet = hasOutlet;
     }
 
-    @Override
-    public void eats() {
-        System.out.println(super.getName() + " eats electric food.");
-    }
+        public void thunderPunch(Pokemon enemy) {
+            attack(enemy,30,"ThunderPunch" );
+        }
 
-    public void makeSound(){
-        System.out.println(sound);
-    }
+        public void electroBall(Pokemon enemy) {
+            attack(enemy,40, "electroball");
+        }
 
-    public void lightningBolt(){
-        System.out.println(super.getName() + " throws a " + lightningColor + " lightning bolt");
-    }
+        public void voltAttack(Pokemon enemy) {
+            attack(enemy,50, "VoltAttack" );
+        }
 
-    public String getLightningColor() {
-        return lightningColor;
+        public void thunder(Pokemon enemy) {
+            attack(enemy,60, "thunder");
+        }
     }
-
-    public void setLightningColor(String lightningColor) {
-        this.lightningColor = lightningColor;
-    }
-
-    public String getSound() {
-        return sound;
-    }
-
-    public void setSound(String sound) {
-        this.sound = sound;
-    }
-}

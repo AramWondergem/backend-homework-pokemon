@@ -1,29 +1,27 @@
-public class FirePokemon extends Pokemon{
-    private int temperature;
-    private String flameColor;
+public abstract class FirePokemon extends Pokemon {
 
-    public FirePokemon(String name, int level, int hp, int temperature, String flameColor) {
-        super(name, level, hp);
-        super.setType("Fire");
-
-        this.temperature = temperature;
-        this.flameColor = flameColor;
+    private boolean rainProtected;
+    private boolean doesSmokeSmell;
+    public FirePokemon(String name, int hp, String food, String sound, String picture, Boolean rainProtected, Boolean doesSmokeSmell) {
+        super(name, hp, food, sound,picture);
+        this.rainProtected=rainProtected;
+        this.doesSmokeSmell=doesSmokeSmell;
     }
 
-    @Override
-    public void eats() {
-        System.out.println(super.getName() + " eats fire food.");
-    }
+        public void inferno(Pokemon enemy) {
+            attack(enemy,30,"Inferno" );
+        }
 
-    @Override
-    public void tackle() {
-        super.tackle();
-        if(temperature > 70){
-            System.out.println("and burns its opponent");
+        public void pyroBall(Pokemon enemy) {
+            attack(enemy,40, "Pyroball" );
+        }
+
+        public void fireLash(Pokemon enemy) {
+            attack(enemy,50,"Firelash" );
+        }
+
+        public void flameThrower(Pokemon enemy) {
+            attack(enemy,60,"Flamethrower" );
         }
     }
 
-    public void flameThrower(){
-        System.out.println(super.getName() + " shoots a massive " + flameColor + " flame at its opponent.");
-    }
-}

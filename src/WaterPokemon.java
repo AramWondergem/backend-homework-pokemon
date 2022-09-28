@@ -1,50 +1,27 @@
-public class WaterPokemon extends Pokemon{
-    private boolean livesInWater;
-    private int liters;
+public abstract class WaterPokemon extends Pokemon {
 
-    public WaterPokemon(String name, int level, int hp, boolean livesInWater, int liters) {
-        super(name, level, hp);
-        super.setType("Water");
+    private boolean canFloat;
+    private boolean saltWaterResitant;
 
-        this.livesInWater = livesInWater;
-        this.liters = liters;
+    public WaterPokemon(String name, int hp, String food, String sound, String picture,boolean canFloat, boolean saltWaterResitant) {
+        super(name, hp, food, sound,picture);
+        this.canFloat=canFloat;
+        this.saltWaterResitant=saltWaterResitant;
     }
 
-    @Override
-    public void eats() {
-        System.out.println(super.getName() + " eats water food.");
-    }
+        public void surf(Pokemon enemy) {
+            attack(enemy,30,"surf");
+        }
 
-    @Override
-    public void tackle(){
-        if(livesInWater){
-            System.out.println("This pokemon cannot tackle, because it lives in water.");
-        } else {
-            super.tackle();
+        public void rainDance(Pokemon enemy) {
+            attack(enemy,40,"Raindance" );
+        }
+
+        public void hydroPump(Pokemon enemy) {
+            attack(enemy,50, "Hydropump");
+        }
+
+        public void hydroCanon(Pokemon enemy) {
+            attack(enemy,60,"Hydrocanon" );
         }
     }
-
-    public void waterGun(){
-        if(liters <= 0){
-            System.out.println(super.getName() + " is out of water.");
-        } else {
-            System.out.println(super.getName() + " squirts water.");
-        }
-    }
-
-    public boolean LivesInWater() {
-        return livesInWater;
-    }
-
-    public void toggleLivesInWater(boolean livesInWater) {
-        this.livesInWater = livesInWater;
-    }
-
-    public int getLiters() {
-        return liters;
-    }
-
-    public void setLiters(int liters) {
-        this.liters = liters;
-    }
-}
