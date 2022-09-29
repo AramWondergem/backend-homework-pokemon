@@ -10,8 +10,9 @@ public class Main {
 
     public static void main(String[] args) {
         printWelkomMessage();
-        choosingPokemonToCreat();
-
+        while(true) {
+            choosingPokemonToCreat();
+        }
 //        Trainer trainer = new Trainer();
 //
 //        Pokemon pikachu1 = new ElectricPokemon(1);
@@ -141,6 +142,8 @@ public class Main {
         switch (placeholderTypePokemon){
             case 1:
                 System.out.println("Fire pokemon is made");
+                String placeholderPokemonChoice = FirePokemon.firePokemon.get(placeHolderPokemonChoice);
+                Pokemon p = new FirePokemon(placeholderPokemonChoice);
                 break;
             case 2:
                 System.out.println("Electric pokemon is made");

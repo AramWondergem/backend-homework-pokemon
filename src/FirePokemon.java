@@ -9,8 +9,8 @@ public class FirePokemon extends Pokemon {
         firePokemon.put(1,"Charmander");
     }
 
-    public FirePokemon() {
-        super("type");
+    public FirePokemon(String type) {
+        super(type);
     }
 
 }

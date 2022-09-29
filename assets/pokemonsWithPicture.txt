@@ -1,5 +1,4 @@
-Pikachu;60;hamster dryfood;PikaPika;
-quu..__
+Pikachu;60;hamster dryfood;PikaPika;quu..__
  $$$b  `---.__
   "$$b        `--.                          ___.---uuudP
    `$$b           `.__.------.__     __.---'      $$$$"              .
@@ -37,8 +36,8 @@ quu..__
                |   .:::------------\       /
               /   .''               >::'  /
               `',:                 :    .'
-                                   `:.:' Tim Park;
-Charmander;60;Chicken;Chaaaarmander;
+                                   `:.:' Tim Park
+;Charmander;60;Chicken;Chaaaarmander;
               _.--""`-..
             ,'          `.
           ,'          __  `.
@@ -72,8 +71,8 @@ Charmander;60;Chicken;Chaaaarmander;
    _,-_    '       `.     .'      ,\
    -" /`.         _,'     | _  _  _.|
     ""--'---"""""'        `' '! |! /
-                            `" " -' mh;
-Bulbasaur;60;Onions;BrrrrBrrrrBrrrr;
+                            `" " -' mh
+;Bulbasaur;60;Onions;BrrrrBrrrrBrrrr;
                                            /
                         _,.------....___,.' ',.-.
                      ,-'          _,.--"        |
@@ -101,8 +100,8 @@ Bulbasaur;60;Onions;BrrrrBrrrrBrrrr;
   | `._.'    `,_            :  /         ,'          .
  .'          /| `-.        . ,'         ,           ,
  '-.__ __ _,','    '`-..___:-...__   ,.'\ ____.___.'
- `"^--'..'   '-`-^-'"--    `-^-'`.''"""""`.,^.`.--' mh;
- Squirtle;60;seaweed;Hibriaaaaa;
+ `"^--'..'   '-`-^-'"--    `-^-'`.''"""""`.,^.`.--' mh
+ ;Squirtle;60;seaweed;Hibriaaaaa;
                 _,........__
              ,-'            "`-.
            ,'                   `-.
@@ -135,7 +134,7 @@ Bulbasaur;60;Onions;BrrrrBrrrrBrrrr;
                  \          \      |          |
                 ,'           )     `.         |
                  7____,,..--'      /          |
-                                   `---.__,--.'mh;
+                                   `---.__,--.'mh
 
 
 

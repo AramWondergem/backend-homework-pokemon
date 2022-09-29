@@ -166,16 +166,20 @@ public abstract class Pokemon {
 
     public void pokemonBirth(String type) {
         try {
-            File pokemonsFile = new File("assets/pokemons.txt");
+            File pokemonsFile = new File("assets/pokemonsWithPicture.txt");
             Scanner fileScanner = new Scanner(pokemonsFile);
             fileScanner.useDelimiter(";");
             while (fileScanner.hasNext()) {
 
-                if (fileScanner.equals(type)) {
-                    this.name=fileScanner.next();
-                    this.hp=Integer.parseInt(fileScanner.next());
-                    this.food=fileScanner.next();
+                String placeholderOutputFilescanner = fileScanner.next();
+
+                if (placeholderOutputFilescanner.equals(type)) {
+                    this.name = placeholderOutputFilescanner;
+                    this.hp = Integer.parseInt(fileScanner.next());
+                    this.food = fileScanner.next();
+                    this.sound= fileScanner.next();
                     this.picture=fileScanner.next();
+                    System.out.println(name+hp+food+sound);
                 }
 
             }

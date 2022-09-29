@@ -8,8 +8,8 @@ public class ElectricPokemon extends Pokemon {
 
     static {
         electricPokemon.put(1,"Pikachu");
-    }    public ElectricPokemon() {
-        super("type");
+    }    public ElectricPokemon(String type) {
+        super(type);
 
     }
 
