@@ -11,41 +11,42 @@ public abstract class Pokemon {
     private String picture;
     private Trainer trainer;
 
+
+    // Hashmaps from assets files with attacks
     private static Map<String, Map<String, Integer>> generalAttacks = new HashMap<>();
     private static Map<String, Integer> atacksElectric = new HashMap<>();
     private static Map<String, Integer> atacksGrass = new HashMap<>();
     private static Map<String, Integer> atacksFire = new HashMap<>();
     private static Map<String, Integer> atacksWater = new HashMap<>();
-    protected static Map<String, Map<Integer, String>> collectionsOfPokemons= new HashMap<>();
+    //Hashmap with all pokemons which can be created
+    protected static Map<String, Map<Integer, String>> collectionsOfPokemons = new HashMap<>();
+    //List with created pokemons
+    protected static List<Pokemon> createdPokemons = new ArrayList<>();
 
+    //Filling the above hashmaps
     static {
-        loadAttacks("assets/attacksElectric.txt",atacksElectric);
-        loadAttacks("assets/attacksWater.txt",atacksWater);
-        loadAttacks("assets/attacksGrass.txt",atacksGrass);
-        loadAttacks("assets/attacksFire.txt",atacksFire);
+        loadAttacks("assets/attacksElectric.txt", atacksElectric);
+        loadAttacks("assets/attacksWater.txt", atacksWater);
+        loadAttacks("assets/attacksGrass.txt", atacksGrass);
+        loadAttacks("assets/attacksFire.txt", atacksFire);
 
-        generalAttacks.put("Electric",atacksElectric);
-        generalAttacks.put("Fire",atacksFire);
-        generalAttacks.put("Water",atacksWater);
-        generalAttacks.put("Grass",atacksGrass);
+        generalAttacks.put("Electric", atacksElectric);
+        generalAttacks.put("Fire", atacksFire);
+        generalAttacks.put("Water", atacksWater);
+        generalAttacks.put("Grass", atacksGrass);
 
-        Iterator<Map.Entry<String, Integer>> iterator = atacksElectric.entrySet().iterator();
 
-        while (iterator.hasNext()) {
-            Map.Entry<String, Integer> result = (Map.Entry<String, Integer>) iterator.next();
-            System.out.println(result.getKey() + " " + result.getValue());
-
-        }
-
-        collectionsOfPokemons.put("1. Fire Pokemons",FirePokemon.firePokemon);
-        collectionsOfPokemons.put("2. Electric Pokemons",ElectricPokemon.electricPokemon);
-        collectionsOfPokemons.put("3. Grass Pokemons",GrassPokemon.grassPokemon);
-        collectionsOfPokemons.put("4. Water Pokemons",WaterPokemon.waterPokemon);
+        collectionsOfPokemons.put("1. Fire Pokemons", FirePokemon.firePokemon);
+        collectionsOfPokemons.put("2. Electric Pokemons", ElectricPokemon.electricPokemon);
+        collectionsOfPokemons.put("3. Grass Pokemons", GrassPokemon.grassPokemon);
+        collectionsOfPokemons.put("4. Water Pokemons", WaterPokemon.waterPokemon);
     }
 
-
+    //Constructors
     public Pokemon(String type) {
         pokemonBirth(type);
+        createdPokemons.add(this);
+
     }
 
     public void eats() {
@@ -83,7 +84,7 @@ public abstract class Pokemon {
         enemy.setHp(enemy.getHp() - damage);
         Main.waitingMain(1000);
         System.out.println("The level of " + enemy.getName() + " is now: " + enemy.getHp());
-    }
+    } // should be adapted to work with the hashmap and the printAttacks method
 
     public String getName() {
         return name;
@@ -133,7 +134,7 @@ public abstract class Pokemon {
         System.out.println(picture);
     }
 
-
+    // Between class pokemon and class trainer there is a bi-directional relationship
     public Trainer getTrainer() {
         return trainer;
     }
@@ -177,9 +178,8 @@ public abstract class Pokemon {
                     this.name = placeholderOutputFilescanner;
                     this.hp = Integer.parseInt(fileScanner.next());
                     this.food = fileScanner.next();
-                    this.sound= fileScanner.next();
-                    this.picture=fileScanner.next();
-                    System.out.println(name+hp+food+sound);
+                    this.sound = fileScanner.next();
+                    this.picture = fileScanner.next();
                 }
 
             }
@@ -194,7 +194,7 @@ public abstract class Pokemon {
 
     }
 
-    private static void loadAttacks(String pathname,Map attacksmap){
+    private static void loadAttacks(String pathname, Map attacksmap) {
         try {
             File attacksFile = new File(pathname);
             Scanner fileScanner = new Scanner(attacksFile);
@@ -210,21 +210,39 @@ public abstract class Pokemon {
 
     }
 
-    public static void printListOfPokemons(){
+    public static void printListOfPokemons() {
 
-        TreeMap<String,Map<Integer,String>> treeMap = new TreeMap<>(collectionsOfPokemons);
+        TreeMap<String, Map<Integer, String>> treeMap = new TreeMap<>(collectionsOfPokemons);
         Iterator iterator = treeMap.keySet().iterator();
 
 
         while (iterator.hasNext()) {
-            String keys= (String)iterator.next();
+            String keys = (String) iterator.next();
             System.out.println(keys);
 
-            Map<Integer,String> placeholderHashmap = collectionsOfPokemons.get(keys);
+            Map<Integer, String> placeholderHashmap = collectionsOfPokemons.get(keys);
 
             placeholderHashmap.forEach((key, value) -> System.out.println(key + " : " + value));
 
 
         }
+    }
+
+    private void printAttacks() {
+        Iterator<Map.Entry<String, Map<String, Integer>>> iterator = generalAttacks.entrySet().iterator();
+
+
+        while (iterator.hasNext()) {
+            Map.Entry<String, Map<String, Integer>> result = iterator.next();
+            System.out.println(result.getKey());
+
+            Iterator<Map.Entry<String, Integer>> iterator2 = result.getValue().entrySet().iterator();
+            while (iterator2.hasNext()) {
+                Map.Entry<String, Integer> result2 = iterator2.next();
+                System.out.println("attack: " + result2.getKey() + "------Damage: " + result2.getValue());
+            }
+
+        }
+
     }
 }

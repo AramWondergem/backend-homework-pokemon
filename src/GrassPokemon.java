@@ -8,8 +8,8 @@ public class GrassPokemon extends Pokemon {
     static {
         grassPokemon.put(1,"Bulbasaur");
     }
-        public GrassPokemon() {
-            super("type");
+        public GrassPokemon(String type) {
+            super(type);
         }
 
 

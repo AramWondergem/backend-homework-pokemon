@@ -10,8 +10,13 @@ public class Main {
 
     public static void main(String[] args) {
         printWelkomMessage();
-        while(true) {
+        for (int i=0;i<5;i++) {
             choosingPokemonToCreat();
+        }
+
+        for (Pokemon p: Pokemon.createdPokemons) {
+            System.out.println(p.getName() + "\n");
+
         }
 //        Trainer trainer = new Trainer();
 //
@@ -147,12 +152,18 @@ public class Main {
                 break;
             case 2:
                 System.out.println("Electric pokemon is made");
+                placeholderPokemonChoice = ElectricPokemon.electricPokemon.get(placeHolderPokemonChoice);
+                Pokemon e = new ElectricPokemon(placeholderPokemonChoice);
                 break;
             case 3:
                 System.out.println("Grass pokemon is made");
+                placeholderPokemonChoice = GrassPokemon.grassPokemon.get(placeHolderPokemonChoice);
+                Pokemon g = new GrassPokemon(placeholderPokemonChoice);
                 break;
             case 4:
                 System.out.println("Water pokemon is made");
+                placeholderPokemonChoice = WaterPokemon.waterPokemon.get(placeHolderPokemonChoice);
+                Pokemon w = new WaterPokemon(placeholderPokemonChoice);
                 break;
         }
     }
